@@ -1,51 +1,51 @@
 import { useState } from "react";
 import { useAuthContext } from "../features/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Box, Center, Text } from "@chakra-ui/react";
+import { LoginForm } from "../components/auth/LoginForm";
+import type { LoginPayload } from "../types/auth";
 
 export const LoginPage = () => {
    const { login } = useAuthContext();
    const navigate = useNavigate();
 
-   const [email, setEmail] = useState("");
-   const [password, setPassword] = useState("");
    const [error, setError] = useState("");
+   const [loading, setLoading] = useState(false);
 
-   const handleSubmit = async (e: React.FormEvent) => {
-      e.preventDefault();
-
+   const handleLogin = async (payload: LoginPayload) => {
       try {
-         await login({ email, password });
+         setLoading(true);
+         await login(payload);
          navigate("/");
-      } catch (error) {
-         setError("Login fallito");
+      } catch {
+         setError("Invalid credentials");
+      } finally {
+         setLoading(false);
       }
    };
 
    return (
-      <form
-         onSubmit={handleSubmit}
-         className="max-w-md mx-auto mt-20 flex flex-col gap-4 "
-      >
-         <input
-            className="border-2 border-gray-300 p-2 rounded-md"
-            placeholder="Email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-         />
-         <input
-            className="border-2 border-gray-300 p-2 rounded-md"
-            placeholder="Password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-         />
+      <Center minH="90vh">
+         <Box w="sm" p={6} borderWidth="1px" rounded="md">
+            <LoginForm
+               onSubmit={handleLogin}
+               isLoading={loading}
+               error={error}
+            />
 
-         {error && <p className="text-red-500">{error}</p>}
-
-         <button className="bg-blue-600 text-white p-2 rounded-md cursor-pointer mt-3">
-            Login
-         </button>
-      </form>
+            <Text textStyle="xs" mt={4}>
+               Don't have an account?
+               <Box
+                  as="span"
+                  ml={2}
+                  display="inline-block"
+                  color={"blue.600"}
+                  fontWeight={500}
+               >
+                  <Link to="/">Sign Up</Link>
+               </Box>
+            </Text>
+         </Box>
+      </Center>
    );
 };
