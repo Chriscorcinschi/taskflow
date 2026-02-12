@@ -1,18 +1,32 @@
-import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
+import { Flex, Box, Spacer } from "@chakra-ui/react";
+import { ColorModeButton } from "../ui/color-mode";
+import { Logo } from "../ui/navBar/logo";
+import { IoIosLogOut } from "react-icons/io";
+import { LogoutButton } from "../auth/LogoutButton";
 
-export const RootLayout = () => {
-  return (
-    <div className="min-h-screen flex flex-col">
-      <header className="bg-gray-900 text-white p-4">
-        <nav className="flex gap-4">
-          <Link to="/">Home</Link>
-          <Link to="/login">Login</Link>
-        </nav>
-      </header>
-      <main className="flex-1 p-6">
-        <Outlet />
-      </main>
-    </div>
-  );
-};
+export function RootLayout() {
+   return (
+      <Flex minH="100vh" direction="column">
+         <Flex
+            as="header"
+            p={4}
+            borderBottom="1px solid"
+            borderColor="gray.200"
+         >
+            <Logo />
+            <Link to="/">Dashboard</Link>
+
+            <Spacer />
+            <Flex gap={3} align="center">
+               <ColorModeButton />
+               <LogoutButton />
+            </Flex>
+         </Flex>
+
+         <Box as="main" flex="1" p={6}>
+            <Outlet />
+         </Box>
+      </Flex>
+   );
+}
