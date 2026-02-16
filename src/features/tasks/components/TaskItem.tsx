@@ -11,7 +11,7 @@ import {
    taskStatusLabels,
    taskStatusOptions,
    type Task,
-} from "../../types/task";
+} from "../types/task";
 import { RiDeleteBinLine } from "react-icons/ri";
 
 interface Props {

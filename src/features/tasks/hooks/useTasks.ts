@@ -4,8 +4,8 @@ import {
    deleteTask,
    getTasks,
    updateTaskStatus,
-} from "./tasks.api";
-import type { TaskStatus } from "../../types/task";
+} from "../api/tasks.api";
+import type { TaskStatus } from "../types/task";
 
 export function useTasks() {
    const queryClient = useQueryClient();

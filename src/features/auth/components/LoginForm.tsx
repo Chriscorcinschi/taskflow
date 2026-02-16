@@ -1,6 +1,6 @@
 import { Button, Input, Stack, Heading, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import type { LoginPayload } from "../../types/auth";
+import type { LoginPayload } from "../types/auth";
 
 interface Props {
    onSubmit: (payload: LoginPayload) => Promise<void>;

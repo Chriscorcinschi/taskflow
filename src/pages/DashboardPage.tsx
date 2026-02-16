@@ -1,7 +1,7 @@
 import { Box, Heading, Stack, Text } from "@chakra-ui/react";
-import { useTasks } from "../features/tasks/useTasks";
-import { TaskForm } from "../components/tasks/TaskForm";
-import { TaskList } from "../components/tasks/TaskList";
+import { useTasks } from "../features/tasks/hooks/useTasks";
+import { TaskForm } from "../features/tasks/components/TaskForm";
+import { TaskList } from "../features/tasks/components/TaskList";
 
 export function DashboardPage() {
    const {

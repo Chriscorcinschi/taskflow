@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { useAuthContext } from "../features/AuthContext";
+import { useAuthContext } from "../features/auth/context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { Box, Center, Text } from "@chakra-ui/react";
-import { LoginForm } from "../components/auth/LoginForm";
-import type { LoginPayload } from "../types/auth";
+import { LoginForm } from "../features/auth/components/LoginForm";
+import type { LoginPayload } from "../features/auth/types/auth";
 
 export const LoginPage = () => {
    const { login } = useAuthContext();

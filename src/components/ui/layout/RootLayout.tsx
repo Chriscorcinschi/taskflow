@@ -1,9 +1,9 @@
 import { Outlet, Link } from "react-router-dom";
 import { Flex, Box, Spacer } from "@chakra-ui/react";
-import { ColorModeButton } from "../ui/color-mode";
-import { Logo } from "../ui/navBar/logo";
+import { ColorModeButton } from "../color-mode";
+import { Logo } from "../navBar/Logo";
 import { IoIosLogOut } from "react-icons/io";
-import { LogoutButton } from "../auth/LogoutButton";
+import { LogoutButton } from "../../../features/auth/components/LogoutButton";
 
 export function RootLayout() {
    return (

@@ -1,4 +1,4 @@
-import type { Task } from "../../types/task";
+import type { Task } from "../types/task";
 
 let tasks: Task[] = [
    { id: "1", title: "Setup progetto", status: "done" },

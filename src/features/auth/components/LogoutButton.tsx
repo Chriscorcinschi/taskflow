@@ -1,7 +1,7 @@
 import { Button } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { useAuthContext } from "../../features/AuthContext";
 import { IoIosLogOut } from "react-icons/io";
+import { useAuthContext } from "../context/AuthContext";
 
 export function LogoutButton() {
    const { logout, user } = useAuthContext();

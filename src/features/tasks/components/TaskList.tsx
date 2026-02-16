@@ -1,6 +1,6 @@
 import { Stack, Box, Text } from "@chakra-ui/react";
 import { TaskItem } from "./TaskItem";
-import type { Task } from "../../types/task";
+import type { Task } from "../types/task";
 
 interface Props {
    tasks: Task[];
