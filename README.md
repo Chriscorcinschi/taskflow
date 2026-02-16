@@ -36,39 +36,6 @@ All other credentials will trigger an error.
 - `lint` - run ESLint (if configured)
 -
 
-## 📁 Project Structure
-
-The project follows a **feature‑based architecture** for scalability and maintainability.
-src/
-├── app/ # Bootstrap and global providers
-│ ├── providers.tsx # All context providers (Chakra, Query, Auth)
-│ ├── App.tsx # Root component with router
-│ └── main.tsx # DOM entry point
-├── assets/ # Static files (CSS, images)
-├── components/ # Reusable UI components
-│ ├── ui/ # Atomic components (Button, Input, Badge, etc.)
-│ └── layout/ # Structural components (RootLayout)
-├── features/ # Business modules
-│ ├── auth/ # Authentication feature
-│ │ ├── api/ # Auth API calls (login)
-│ │ ├── components/ # LoginForm, LogoutButton
-│ │ ├── hooks/ # useAuth (context consumer)
-│ │ ├── context/ # AuthContext and provider
-│ │ └── types/ # Auth‑related TypeScript types
-│ └── tasks/ # Tasks feature
-│ ├── api/ # Tasks API (CRUD)
-│ ├── components/ # TaskForm, TaskItem, TaskList
-│ ├── hooks/ # useTasks (React Query logic)
-│ └── types/ # Task types and status helpers
-├── pages/ # Page components (used by router)
-│ ├── DashboardPage.tsx
-│ └── LoginPage.tsx
-├── routes/ # Router configuration
-│ └── index.tsx
-├── lib/ # Library configurations (axios, etc.)
-├── utils/ # Pure helper functions
-└── types/ # Global TypeScript types (if any)
-
 ## 👤 Author
 
 Chris Corcinschi
@@ -113,39 +80,6 @@ Tutte le altre credenziali attiveranno un errore.
 - `build` - Controllo TypeScript + build Vite
 - `preview` - anteprima della build di produzione
 - `lint` - esegui ESLint (se configurato)
-
-## 📁 Struttura del progetto
-
-Il progetto segue un'architettura basata su **feature‑** per scalabilità e manutenibilità.
-sorgente/
-├── app/ # Bootstrap e fornitori globali
-│ ├── provider.tsx # Tutti i provider di contesto (Chakra, Query, Auth)
-│ ├── App.tsx # Componente root con router
-│ └── main.tsx # Punto di ingresso DOM
-├── risorse/ # File statici (CSS, immagini)
-├── componenti/ # Componenti UI riutilizzabili
-│ ├── ui/ # Componenti atomici (pulsante, input, badge, ecc.)
-│ └── layout/ # Componenti strutturali (RootLayout)
-├── caratteristiche/ # Moduli aziendali
-│ ├── auth/ # Funzione di autenticazione
-│ │ ├── api/ # Autentica le chiamate API (accesso)
-│ │ ├── componenti/ # Modulo di accesso, pulsante di disconnessione
-│ │ ├── hooks/ # useAuth (consumatore di contesto)
-│ │ ├── contesto/ # AuthContext e provider
-│ │ └── tipi/ # Auth‑tipi TypeScript correlati
-│ └── attività/ # Funzionalità attività
-│ ├── api/ # API delle attività (CRUD)
-│ ├── componenti/ # TaskForm, TaskItem, TaskList
-│ ├── hooks/ # useTasks (logica React Query)
-│ └── tipi/ # Tipi di attività e aiutanti di stato
-├── pagine/ # Componenti della pagina (utilizzati dal router)
-│ ├── DashboardPage.tsx
-│ └── Pagina di accesso.tsx
-├── percorsi/ # Configurazione del router
-│ └── indice.tsx
-├── lib/ # Configurazioni della libreria (assi, ecc.)
-├── utils/ # Funzioni di supporto pure
-└── tipi/ # Tipi TypeScript globali (se presenti)
 
 ## 👤 Autore
 
